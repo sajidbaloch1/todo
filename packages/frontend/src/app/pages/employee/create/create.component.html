@@ -1,0 +1,46 @@
+<div class="container">
+
+    <ion-grid class="ion-padding" [fixed]="true">
+        <ion-row>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <h1 class="ion-text-center ion-margin">Add Employee</h1>
+                    </ion-card-header>
+                    <form [formGroup]="data" (ngSubmit)="onSubmit()">
+                        <ion-card-content>
+                            <ion-row>
+                                <ion-col size="6">
+                                    <ion-input label="Enter Name" label-placement="floating" fill="solid"
+                                        formControlName="name" placeholder="Enter text"></ion-input>
+                                </ion-col>
+                                <!-- <ion-col size="">
+                            </ion-col> -->
+                                <ion-col size="6">
+                                    <ion-input label="Enter Email" type="email" label-placement="floating" fill="solid"
+                                        formControlName="email" placeholder="Enter text"></ion-input>
+                                </ion-col>
+                            </ion-row>
+                            <br>
+                            <ion-row>
+                                <ion-col size="12">
+
+                                    <ion-input label="Enter Address" type="text" label-placement="floating" fill="solid"
+                                        formControlName="address" placeholder="Enter text"></ion-input>
+                                </ion-col>
+                            </ion-row> <br>
+                            <ion-row>
+                                <ion-col size="5">
+
+                                    <ion-button type="submit" color="primary">
+                                        Insert
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </form>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>

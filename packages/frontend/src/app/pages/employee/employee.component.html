@@ -1,0 +1,57 @@
+<ion-grid fixed>
+    <ion-row>
+        <ion-col size="12">
+            <ion-button shape="round" routerLink="/create" class="ion-float-right">Add Employee</ion-button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col size="12">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Employees</ion-title>
+                </ion-toolbar>
+            </ion-header>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col size="2">
+            ID
+        </ion-col>
+        <ion-col size="2">
+            Name
+        </ion-col>
+        <ion-col size="3">
+            Email
+        </ion-col>
+        <ion-col size="2">
+            Address
+        </ion-col>
+        <ion-col size="3">
+            Action
+        </ion-col>
+        <hr>
+        <ng-container *ngFor="let item of employess index">
+            <ion-col size="2" *ngIf="item.id !== undefined">
+                {{ item.id }}
+            </ion-col>
+            <ion-col size="2" *ngIf="item.name !== undefined">
+                {{ item.name }}
+            </ion-col>
+            <ion-col size="3" *ngIf="item.email !== undefined">
+                {{ item.email }}
+            </ion-col>
+            <ion-col size="2" *ngIf="item.address !== undefined">
+                {{ item.address }}
+            </ion-col>
+            <ion-col size="2" *ngIf="item.address !== undefined">
+                <ion-button (click)="editItem(item.id)" size="small"><ion-icon
+                        name="create-sharp"></ion-icon></ion-button>
+                <ion-button (click)="deleteItem(item.id)" class="danger" size="small"><ion-icon
+                        name="trash-sharp"></ion-icon>
+                </ion-button>
+            </ion-col>
+        </ng-container>
+    </ion-row>
+</ion-grid>
